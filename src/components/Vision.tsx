@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 export default function Vision() {
   return (
-    <section id="vision" style={{ padding: '120px 8vw' }}>
+    <section id="vision" style={{ padding: '0 8vw' }}>
       <div style={{ maxWidth: 960, margin: '0 auto', textAlign: 'left' }}>
         <motion.div
           initial={{ opacity: 0, y: 40 }}

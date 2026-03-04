@@ -55,7 +55,7 @@ function Pill({ text, accent }: { text: string; accent: string }) {
 
 export default function About() {
   return (
-    <section style={{ padding: '120px 8vw' }}>
+    <section style={{ padding: '0 8vw' }}>
       <div
         style={{
           display: 'grid',

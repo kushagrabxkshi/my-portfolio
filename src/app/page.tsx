@@ -24,7 +24,7 @@ export default function Home() {
     <>
       <Cursor />
       <Nav />
-      <main>
+      <main style={{ display: 'flex', flexDirection: 'column', gap: 120 }}>
         <HeroCanvas />
         <About />
         <BentoGrid />

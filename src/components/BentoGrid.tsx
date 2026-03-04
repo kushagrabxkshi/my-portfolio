@@ -147,7 +147,7 @@ function NeuralSVG() {
 
 export default function BentoGrid() {
   return (
-    <section id="work" style={{ padding: '120px 8vw' }}>
+    <section id="work" style={{ padding: '0 8vw' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
         <p
           style={{

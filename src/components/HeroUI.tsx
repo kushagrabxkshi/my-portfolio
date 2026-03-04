@@ -77,9 +77,9 @@ function WordReveal({
   style?: React.CSSProperties
 }) {
   return (
-    <span style={{ overflow: 'hidden', display: 'inline-block', marginRight: '0.3em' }}>
+    <span style={{ overflow: 'hidden', display: 'inline-block', marginRight: '0.3em', paddingBottom: '0.12em' }}>
       <motion.span
-        initial={{ y: '105%' }}
+        initial={{ y: '110%' }}
         animate={{ y: '0%' }}
         transition={{
           ease: [0.22, 1, 0.36, 1],
@@ -112,6 +112,7 @@ export default function HeroUI() {
         flexDirection: 'column',
         justifyContent: 'center',
         padding: '0 8vw',
+        paddingTop: 80,
         paddingBottom: '10vh',
       }}
     >
@@ -136,7 +137,7 @@ export default function HeroUI() {
           fontFamily: "'Satoshi', sans-serif",
           fontWeight: 900,
           fontSize: 'clamp(52px, 8vw, 110px)',
-          lineHeight: 0.96,
+          lineHeight: 1.06,
         }}
       >
         <div>

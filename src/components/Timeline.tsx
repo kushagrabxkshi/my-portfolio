@@ -106,7 +106,7 @@ export default function Timeline() {
   }, [sectionHeight])
 
   return (
-    <section style={{ padding: '120px 8vw' }}>
+    <section style={{ padding: '0 8vw' }}>
       <div ref={sectionRef} style={{ maxWidth: 800, margin: '0 auto', position: 'relative' }}>
         <p
           style={{

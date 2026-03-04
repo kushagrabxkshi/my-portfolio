@@ -5,7 +5,7 @@ import MagneticButton from './MagneticButton'
 
 export default function Contact() {
   return (
-    <section id="contact" style={{ padding: '120px 8vw 80px', textAlign: 'center' }}>
+    <section id="contact" style={{ padding: '0 8vw 80px', textAlign: 'center' }}>
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
