@@ -57,12 +57,18 @@ function BentoCard({
     <motion.div variants={item} style={style}>
       <div
         ref={innerRef}
-        className="glass chip-clip"
+        className="glass"
         style={{
           position: 'relative',
           overflow: 'hidden',
           height: '100%',
           willChange: 'transform',
+          clipPath: `polygon(
+            0% 12px, 12px 0%,
+            calc(100% - 12px) 0%, 100% 12px,
+            100% calc(100% - 12px), calc(100% - 12px) 100%,
+            12px 100%, 0% calc(100% - 12px)
+          )`,
         }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}

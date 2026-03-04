@@ -118,15 +118,16 @@ export default function HeroUI() {
     >
       <motion.p
         initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 0.75, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
         style={{
           fontFamily: "'JetBrains Mono', monospace",
           fontSize: 10,
           color: '#00e5ff',
-          opacity: 0.75,
           letterSpacing: '0.5em',
           marginBottom: 20,
+          position: 'relative',
+          zIndex: 10,
         }}
       >
         ▸ VLSI × AI × SILICON ENGINEERING
@@ -136,8 +137,8 @@ export default function HeroUI() {
         style={{
           fontFamily: "'Satoshi', sans-serif",
           fontWeight: 900,
-          fontSize: 'clamp(52px, 8vw, 110px)',
-          lineHeight: 1.06,
+          fontSize: 'clamp(40px, 6vw, 88px)',
+          lineHeight: 0.96,
         }}
       >
         <div>

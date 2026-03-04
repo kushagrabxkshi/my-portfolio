@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState, useCallback } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const animationLines: { text: string; color: string; pause: number }[] = [
   { text: '> SiliconSpec AI v0.1 initializing...', color: '#00ff88', pause: 400 },
@@ -23,55 +23,61 @@ const animationLines: { text: string; color: string; pause: number }[] = [
   { text: '> Testbench exported. ✓', color: '#00ff88', pause: 0 },
 ]
 
+function delay(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
+
 function AnimatedTerminal() {
   const [displayedLines, setDisplayedLines] = useState<{ text: string; color: string }[]>([])
-  const animatingRef = useRef(true)
   const containerRef = useRef<HTMLDivElement>(null)
 
-  const runAnimation = useCallback(async () => {
-    while (animatingRef.current) {
-      setDisplayedLines([])
+  useEffect(() => {
+    let cancelled = false
 
-      for (let lineIdx = 0; lineIdx < animationLines.length; lineIdx++) {
-        if (!animatingRef.current) return
-        const line = animationLines[lineIdx]
+    async function run() {
+      while (!cancelled) {
+        setDisplayedLines([])
+        await delay(100)
 
-        if (line.text === '') {
-          setDisplayedLines((prev) => [...prev, { text: '', color: '' }])
-          continue
-        }
+        const builtLines: { text: string; color: string }[] = []
 
-        for (let charIdx = 0; charIdx <= line.text.length; charIdx++) {
-          if (!animatingRef.current) return
-          const partial = line.text.slice(0, charIdx)
-          setDisplayedLines((prev) => {
-            const newLines = [...prev]
-            if (newLines.length > lineIdx) {
-              newLines[lineIdx] = { text: partial, color: line.color }
-            } else {
-              newLines.push({ text: partial, color: line.color })
+        for (let lineIdx = 0; lineIdx < animationLines.length; lineIdx++) {
+          if (cancelled) return
+          const line = animationLines[lineIdx]
+
+          if (line.text === '') {
+            builtLines.push({ text: '', color: '' })
+            setDisplayedLines([...builtLines])
+            continue
+          }
+
+          for (let charIdx = 0; charIdx <= line.text.length; charIdx++) {
+            if (cancelled) return
+            const partial = line.text.slice(0, charIdx)
+            setDisplayedLines([...builtLines, { text: partial, color: line.color }])
+            if (charIdx < line.text.length) {
+              await delay(18)
             }
-            return newLines
-          })
-          await new Promise((r) => setTimeout(r, 18))
+          }
+
+          builtLines.push({ text: line.text, color: line.color })
+          setDisplayedLines([...builtLines])
+
+          if (line.pause > 0) {
+            await delay(line.pause)
+          }
         }
 
-        if (line.pause > 0) {
-          await new Promise((r) => setTimeout(r, line.pause))
-        }
+        await delay(3000)
       }
+    }
 
-      await new Promise((r) => setTimeout(r, 3000))
+    run()
+
+    return () => {
+      cancelled = true
     }
   }, [])
-
-  useEffect(() => {
-    animatingRef.current = true
-    runAnimation()
-    return () => {
-      animatingRef.current = false
-    }
-  }, [runAnimation])
 
   useEffect(() => {
     if (containerRef.current) {
