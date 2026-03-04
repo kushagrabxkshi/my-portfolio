@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useMotionValue, useSpring } from 'framer-motion'
-import { useRef, useEffect, useCallback } from 'react'
+import { useRef, useCallback } from 'react'
 import MagneticButton from './MagneticButton'
 
 // Cursor velocity effect hook for the Download CV button
