@@ -103,3 +103,73 @@ body::after {
   );
 }
 
+/* ─── MOBILE RESPONSIVE (≤ 768px) ─────────────────────────────── */
+@media (max-width: 768px) {
+  html { cursor: auto; }
+
+  .main-content { gap: 72px !important; }
+
+  /* Hero */
+  .hero-h1 { font-size: clamp(32px, 10vw, 52px) !important; line-height: 1.02 !important; }
+  .hero-buttons { flex-direction: column !important; gap: 12px !important; width: 100%; }
+  .hero-buttons > * { width: 100%; }
+  .hero-buttons span { width: 100% !important; text-align: center; }
+  .hero-bottom-center { display: none !important; }
+  .hero-bottom-right { display: none !important; }
+
+  /* About */
+  .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  /* Bento Grid */
+  .bento-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .bento-grid > * {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+  }
+
+  /* Neural Net card inner */
+  .neural-card-inner {
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  .neural-card-divider {
+    width: 100% !important;
+    height: 1px !important;
+  }
+
+  /* Vision */
+  .vision-callout {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    padding: 28px 24px !important;
+  }
+  .vision-divider { display: none !important; }
+
+  /* SiliconSpec stat row */
+  .stat-row {
+    flex-direction: column !important;
+    gap: 8px !important;
+    text-align: center !important;
+  }
+  .stat-divider { display: none !important; }
+
+  /* SiliconSpec code panes */
+  .code-panes {
+    flex-direction: column !important;
+  }
+
+  /* Section padding */
+  .section-responsive { padding-left: 5vw !important; padding-right: 5vw !important; }
+
+  /* Contact */
+  .contact-h2 { font-size: clamp(32px, 8vw, 52px) !important; }
+
+  /* Timeline event text */
+  .timeline-events { padding-left: 52px !important; }
+}
+

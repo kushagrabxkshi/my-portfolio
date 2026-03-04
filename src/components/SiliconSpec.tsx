@@ -211,7 +211,7 @@ export default function SiliconSpec() {
         SiliconSpec — AI Auto-Verification Engine
       </h3>
 
-      <div style={{ display: 'flex', gap: 12, flex: 1, minHeight: 200 }}>
+      <div className="code-panes" style={{ display: 'flex', gap: 12, flex: 1, minHeight: 200 }}>
         {/* LEFT PANE - Static Verilog */}
         <div
           style={{
@@ -348,8 +348,7 @@ export default function SiliconSpec() {
         <AnimatedTerminal />
       </div>
 
-      <div
-        style={{
+      <div className="stat-row" style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -360,9 +359,9 @@ export default function SiliconSpec() {
         }}
       >
         <span>70% verification time target</span>
-        <span style={{ width: 1, height: 16, background: 'rgba(255,255,255,0.08)' }} />
+        <span className="stat-divider" style={{ width: 1, height: 16, background: 'rgba(255,255,255,0.08)' }} />
         <span>Auto-generates SV testbenches</span>
-        <span style={{ width: 1, height: 16, background: 'rgba(255,255,255,0.08)' }} />
+        <span className="stat-divider" style={{ width: 1, height: 16, background: 'rgba(255,255,255,0.08)' }} />
         <span>Pre-simulation bug detection</span>
       </div>
     </div>

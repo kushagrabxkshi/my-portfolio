@@ -153,7 +153,7 @@ function NeuralSVG() {
 
 export default function BentoGrid() {
   return (
-    <section id="work" style={{ padding: '0 8vw' }}>
+    <section id="work" className="section-responsive" style={{ padding: '0 8vw' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
         <p
           style={{
@@ -183,6 +183,7 @@ export default function BentoGrid() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
+          className="bento-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(3, 1fr)',
@@ -279,6 +280,7 @@ export default function BentoGrid() {
           {/* CARD 4: Neural Net → Silicon */}
           <BentoCard accent="#f59e0b" style={{ gridColumn: 'span 3', minHeight: 160 }}>
             <div
+              className="neural-card-inner"
               style={{
                 padding: 24,
                 display: 'flex',
@@ -316,6 +318,7 @@ export default function BentoGrid() {
               </div>
 
               <div
+                className="neural-card-divider"
                 style={{
                   width: 1,
                   height: 60,

@@ -48,6 +48,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
+      className="section-responsive"
       style={{ padding: '120px 8vw 80px', textAlign: 'center' }}
     >
       <motion.div
@@ -72,6 +73,7 @@ export default function Contact() {
 
         {/* Heading */}
         <h2
+          className="contact-h2"
           style={{
             fontFamily: "'Satoshi', sans-serif",
             fontWeight: 900,

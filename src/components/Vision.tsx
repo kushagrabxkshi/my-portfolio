@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 export default function Vision() {
   return (
-    <section id="vision" style={{ padding: '0 8vw' }}>
+    <section id="vision" className="section-responsive" style={{ padding: '0 8vw' }}>
       <div style={{ maxWidth: 960, margin: '0 auto', textAlign: 'left' }}>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -36,7 +36,7 @@ export default function Vision() {
           </h2>
 
           <div
-            className="glass"
+            className="glass vision-callout"
             style={{
               border: '1px solid rgba(0,229,255,0.2)',
               display: 'grid',
@@ -71,6 +71,7 @@ export default function Vision() {
             </div>
 
             <div
+              className="vision-divider"
               style={{
                 width: 1,
                 height: 80,

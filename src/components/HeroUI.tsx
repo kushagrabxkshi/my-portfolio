@@ -134,6 +134,7 @@ export default function HeroUI() {
       </motion.p>
 
       <h1
+        className="hero-h1"
         style={{
           fontFamily: "'Satoshi', sans-serif",
           fontWeight: 900,
@@ -175,7 +176,7 @@ export default function HeroUI() {
 
       <Typewriter />
 
-      <div style={{ display: 'flex', gap: 16, marginTop: 48, pointerEvents: 'auto' }}>
+      <div className="hero-buttons" style={{ display: 'flex', gap: 16, marginTop: 48, pointerEvents: 'auto' }}>
         <MagneticButton href="#work">
           <span
             data-cursor="magnetic"
@@ -216,6 +217,7 @@ export default function HeroUI() {
       </div>
 
       <div
+        className="hero-bottom-center"
         style={{
           position: 'absolute',
           bottom: 40,
@@ -246,7 +248,7 @@ export default function HeroUI() {
         </span>
       </div>
 
-      <div style={{ position: 'absolute', bottom: 40, right: '8vw' }}>
+      <div className="hero-bottom-right" style={{ position: 'absolute', bottom: 40, right: '8vw' }}>
         <span
           style={{
             fontFamily: "'JetBrains Mono', monospace",

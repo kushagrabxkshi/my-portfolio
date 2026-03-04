@@ -55,8 +55,9 @@ function Pill({ text, accent }: { text: string; accent: string }) {
 
 export default function About() {
   return (
-    <section style={{ padding: '0 8vw' }}>
+    <section className="section-responsive" style={{ padding: '0 8vw' }}>
       <div
+        className="about-grid"
         style={{
           display: 'grid',
           gridTemplateColumns: '1fr 1.2fr',
